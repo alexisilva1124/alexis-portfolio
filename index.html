@@ -1,0 +1,793 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Alexis Silva</title>
+<meta name="description" content="Marketing portfolio featuring brand activations, event production, and leadership work with brands like Canva, YouTube, Marvel, and Teen Vogue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Caveat:wght@600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-primary:#0099EE;
+    --blue-2:#4DB8F3;
+    --sky-soft:#8CD1F7;
+    --sky-pale:#E0F3FD;
+    --lavender:#c9b6ff;
+    --lavender-soft:#e9e0ff;
+    --yellow:#ffe066;
+    --ink:#1B1F3B;
+    --ink-soft:#5B6478;
+    --white:#ffffff;
+    --shadow: 0 12px 30px rgba(0,153,238,0.18);
+    --radius-lg: 32px;
+    --radius-md: 20px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    color:var(--ink);
+    background:var(--sky-pale);
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fredoka', sans-serif;
+    margin:0;
+    line-height:1.1;
+  }
+  .script{
+    font-family:'Caveat', cursive;
+    color:var(--blue-primary);
+  }
+  a{color:inherit; text-decoration:none;}
+  ul{margin:0; padding:0; list-style:none;}
+  img{max-width:100%; display:block;}
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  section{position:relative; padding:110px 0;}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--white);
+    color:var(--blue-primary);
+    font-weight:700;
+    font-size:20px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    padding:12px 26px;
+    border-radius:999px;
+    box-shadow:var(--shadow);
+    margin-bottom:20px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:16px;
+    padding:15px 30px;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .btn-primary{
+    background:var(--blue-primary);
+    color:var(--white);
+    box-shadow:0 10px 24px rgba(0,153,238,0.35);
+  }
+  .btn-primary:hover{transform:translateY(-3px) scale(1.02); box-shadow:0 16px 30px rgba(0,153,238,0.45);}
+  .btn-ghost{
+    background:var(--white);
+    color:var(--ink);
+    border:2px solid var(--ink);
+  }
+  .btn-ghost:hover{transform:translateY(-3px); background:var(--ink); color:var(--white);}
+
+  /* NAV */
+  header{
+    position:fixed;
+    top:env(safe-area-inset-top, 0px); left:0; right:0;
+    z-index:100;
+    background:rgba(224,243,253,0.75);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(0,153,238,0.12);
+  }
+  nav{
+    max-width:1180px;
+    margin:0 auto;
+    padding:16px 28px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    font-family:'Caveat', cursive;
+    font-size:32px;
+    font-weight:700;
+    color:var(--blue-primary);
+  }
+  .nav-links{
+    display:flex;
+    gap:34px;
+    font-weight:600;
+    font-size:15px;
+  }
+  .nav-links a{position:relative; padding:4px 0;}
+  .nav-links a::after{
+    content:"";
+    position:absolute; left:0; bottom:-2px;
+    width:0; height:3px; background:var(--blue-primary); border-radius:3px;
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex; align-items:center; gap:18px;}
+  .burger{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
+  .burger span{width:26px; height:3px; background:var(--ink); border-radius:3px;}
+
+  /* HERO */
+  .hero{
+    padding:170px 0 100px;
+    display:flex;
+    align-items:center;
+    min-height:92vh;
+    position:relative;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:50px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+  }
+  .blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(10px);
+    opacity:.55;
+    z-index:0;
+  }
+  .blob1{width:420px; height:420px; background:var(--sky-soft); top:-120px; right:-100px;}
+  .blob2{width:300px; height:300px; background:var(--lavender-soft); bottom:-80px; left:-60px;}
+  .blob3{width:180px; height:180px; background:var(--yellow); opacity:.4; top:40%; right:20%;}
+  .hero h1{
+    font-size:clamp(42px, 6vw, 74px);
+    font-weight:700;
+    letter-spacing:-.01em;
+  }
+  .hero p.lede{
+    margin-top:22px;
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:480px;
+    line-height:1.6;
+  }
+  .hero-actions{margin-top:34px; display:flex; gap:16px; flex-wrap:wrap;}
+  .hero-visual{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .photo-blob{
+    width:100%;
+    max-width:450px;
+    aspect-ratio:1/1.05;
+    border-radius:45% 55% 60% 40% / 50% 45% 55% 50%;
+    background:linear-gradient(145deg, var(--blue-2), var(--lavender));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  .photo-blob img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:inherit;
+  }
+  .sticker{
+    position:absolute;
+    background:var(--white);
+    padding:10px 18px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+    box-shadow:var(--shadow);
+    display:flex;
+    align-items:center;
+    gap:6px;
+    animation:float 5s ease-in-out infinite;
+  }
+  .sticker.s1{top:-6%; left:-12%; animation-delay:0s; color:var(--blue-primary);}
+  .sticker.s2{bottom:10%; right:-14%; animation-delay:1.2s; color:#7a4fd6;}
+  .sticker.s3{bottom:-6%; left:8%; animation-delay:2.4s; color:#c98a00;}
+  @keyframes float{
+    0%,100%{transform:translateY(0) rotate(-3deg);}
+    50%{transform:translateY(-14px) rotate(3deg);}
+  }
+  .scroll-cue{
+    position:absolute; bottom:28px; left:50%; transform:translateX(-50%);
+    font-size:13px; font-weight:600; color:var(--ink-soft);
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+  }
+  .scroll-cue .dot{
+    width:6px; height:6px; border-radius:50%; background:var(--blue-primary);
+    animation:bounce 1.4s infinite;
+  }
+  @keyframes bounce{0%,100%{transform:translateY(0);} 50%{transform:translateY(8px);}}
+
+  /* MARQUEE */
+  .marquee-strip{
+    background:var(--ink);
+    color:var(--white);
+    padding:18px 0;
+    overflow:hidden;
+    white-space:nowrap;
+    transform:rotate(-1.4deg);
+    margin:0 -4vw;
+  }
+  .marquee-track{
+    display:inline-flex;
+    gap:40px;
+    animation:scroll-left 22s linear infinite;
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:22px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  .marquee-track span{color:var(--blue-2);}
+  @keyframes scroll-left{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+
+  /* SECTION HEADINGS */
+  .section-head{
+    max-width:640px;
+    margin:0 auto 56px;
+    text-align:center;
+  }
+  .section-head h2{
+    font-size:clamp(32px, 4vw, 46px);
+    margin-top:14px;
+  }
+  .section-head p{
+    margin-top:16px;
+    color:var(--ink-soft);
+    font-size:16.5px;
+    line-height:1.7;
+  }
+
+  /* ABOUT */
+  .about .wrap{
+    display:grid;
+    grid-template-columns:0.8fr 1.2fr;
+    gap:60px;
+    align-items:center;
+  }
+  .about-photo{
+    background:linear-gradient(155deg, var(--lavender-soft), var(--sky-soft));
+    border-radius:var(--radius-lg);
+    aspect-ratio:3/4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ink-soft);
+    font-weight:600;
+    text-align:center;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .about-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .about-copy h2{font-size:clamp(30px,4vw,42px); margin-bottom:18px;}
+  .about-copy p{color:var(--ink-soft); font-size:16.5px; line-height:1.75; margin-bottom:16px;}
+  .tag-row{
+    display:flex;
+    flex-wrap:wrap;
+    row-gap:14px;
+    column-gap:12px;
+    margin-top:26px;
+  }
+  .tag-pill{
+    background:var(--sky-pale);
+    color:var(--blue-primary);
+    font-weight:600;
+    font-size:13.5px;
+    padding:10px 20px;
+    border-radius:999px;
+    border:1.5px solid var(--sky-soft);
+  }
+  .stat-row{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin-top:24px;
+  }
+  .stat{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:18px 14px;
+    text-align:center;
+    box-shadow:var(--shadow);
+  }
+  .stat b{
+    display:block;
+    font-family:'Fredoka', sans-serif;
+    font-size:26px;
+    color:var(--blue-primary);
+  }
+  .stat span{font-size:12.5px; color:var(--ink-soft); font-weight:600;}
+
+  /* PORTFOLIO */
+  .portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:26px;
+  }
+  .p-card{
+    background:var(--white);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(27,31,59,0.08);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .p-card:hover{transform:translateY(-8px); box-shadow:var(--shadow);}
+  .p-thumb{
+    aspect-ratio:4/3;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    color:rgba(255,255,255,0.9);
+    font-size:15px;
+    text-align:center;
+    padding:20px;
+    overflow:hidden;
+  }
+  .p-thumb img, .p-thumb video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .p-body{padding:22px 22px 26px;}
+  .p-tag{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--blue-primary);
+    background:var(--sky-pale);
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:10px;
+  }
+  .p-body h3{font-size:19px; margin-bottom:8px;}
+  .p-body p{font-size:14px; color:var(--ink-soft); line-height:1.6;}
+
+  /* VIDEO SAMPLES */
+  .videos{background:var(--white);}
+  .phone-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+    justify-items:center;
+  }
+  .phone-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .phone-mock{
+    position:relative;
+    width:100%;
+    max-width:220px;
+    aspect-ratio:9/18.5;
+    background:var(--ink);
+    border-radius:34px;
+    padding:12px;
+    box-shadow:var(--shadow);
+  }
+  .phone-notch{
+    position:absolute;
+    top:12px; left:50%; transform:translateX(-50%);
+    width:70px; height:18px;
+    background:var(--ink);
+    border-radius:0 0 14px 14px;
+    z-index:2;
+  }
+  .phone-screen{
+    width:100%;
+    height:100%;
+    border-radius:22px;
+    overflow:hidden;
+    background:linear-gradient(160deg, var(--blue-primary), var(--lavender));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+  .phone-screen video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .phone-placeholder{
+    color:rgba(255,255,255,0.9);
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    text-align:center;
+    padding:16px;
+  }
+  .phone-btn{
+    position:absolute;
+    background:var(--ink);
+  }
+  .btn-power{right:-3px; top:110px; width:3px; height:50px; border-radius:0 3px 3px 0;}
+  .btn-vol1{left:-3px; top:90px; width:3px; height:30px; border-radius:3px 0 0 3px;}
+  .btn-vol2{left:-3px; top:130px; width:3px; height:30px; border-radius:3px 0 0 3px;}
+  .phone-caption{
+    margin-top:18px;
+    text-align:center;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    max-width:220px;
+  }
+  .phone-caption b{
+    display:block;
+    font-family:'Fredoka', sans-serif;
+    font-size:16px;
+    color:var(--ink);
+    margin-bottom:4px;
+  }
+  .phone-kpi{
+    display:inline-block;
+    margin-top:10px;
+    background:var(--sky-pale);
+    color:var(--blue-primary);
+    font-weight:700;
+    font-size:12.5px;
+    padding:6px 14px;
+    border-radius:999px;
+    border:1.5px solid var(--sky-soft);
+  }
+
+  /* CONTACT */
+  .contact{
+    text-align:center;
+  }
+  .contact h2{font-size:clamp(34px,5vw,54px); margin-bottom:18px;}
+  .contact p{color:var(--ink-soft); font-size:17px; max-width:480px; margin:0 auto 34px;}
+  .contact-actions{display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:44px;}
+
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,0.6);
+    padding:30px 0;
+    text-align:center;
+    font-size:13.5px;
+  }
+  footer .script{color:var(--blue-2);}
+
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (max-width: 860px){
+    .nav-links{display:none;}
+    .burger{display:flex;}
+    .hero .wrap{grid-template-columns:1fr; text-align:center;}
+    .hero p.lede{margin-left:auto; margin-right:auto;}
+    .hero-actions{justify-content:center;}
+    .hero-visual{order:-1; margin-bottom:20px;}
+    .about .wrap{grid-template-columns:1fr;}
+    .stat-row{grid-template-columns:repeat(2,1fr);}
+    .portfolio-grid{grid-template-columns:1fr;}
+    .phone-grid{grid-template-columns:1fr; gap:48px;}
+    section{padding:70px 0;}
+  }
+
+  .mobile-menu{
+    display:none;
+    position:fixed;
+    top:0; right:0; bottom:0;
+    width:78vw; max-width:320px;
+    background:var(--white);
+    z-index:200;
+    padding:100px 32px 40px;
+    box-shadow:-10px 0 30px rgba(0,0,0,0.15);
+    transform:translateX(100%);
+    transition:transform .3s ease;
+  }
+  .mobile-menu.open{transform:translateX(0);}
+  .mobile-menu a{
+    display:block;
+    font-family:'Fredoka', sans-serif;
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:26px;
+  }
+  .menu-overlay{
+    display:none;
+    position:fixed; inset:0; background:rgba(27,31,59,0.4); z-index:150;
+  }
+  .menu-overlay.open{display:block;}
+</style>
+
+<header>
+  <nav>
+    <a href="#top" class="logo">Alexis Silva</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="burger" id="burgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#work">Work</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="wrap">
+      <div>
+        <h1>hey, i'm <span class="script">Alexis</span>. I help brands leave an impression that sticks.</h1>
+        <p class="lede">I've spent the last several years saying yes to festival lounges, campus stages, and everything in between. Take a look at what that's led to.</p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">See My Work</a>
+          <a href="#about" class="btn btn-ghost">About Me</a>
+          <a href="#contact" class="btn btn-ghost">Contact</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="photo-blob">
+          <img src="images/alexis-hero.jpg" alt="Alexis Silva">
+        </div>
+        <div class="sticker s1">🎉 Activations</div>
+        <div class="sticker s2">💌 Digital Content</div>
+        <div class="sticker s3">📣 5,000+ Reached</div>
+      </div>
+    </div>
+    <div class="scroll-cue"><span>scroll</span><span class="dot"></span></div>
+  </section>
+
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>MARKETING</span> · COMMUNICATIONS · <span>SOCIAL STRATEGY</span> · BRAND ACTIVATIONS · <span>PR</span> · CONTENT · EVENTS · <span>MARKETING</span> · COMMUNICATIONS · <span>SOCIAL STRATEGY</span> · BRAND ACTIVATIONS · <span>PR</span> · CONTENT · EVENTS ·
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-photo reveal"><img src="images/candid-phone-frame.png" alt="Alexis Silva"></div>
+      <div class="about-copy reveal">
+        <div class="eyebrow">about me</div>
+        <h2>i show up, and things go <span class="script">right</span>.</h2>
+        <p>I'm a recent MBA grad from UC Riverside's Anderson School of Management who fell into event marketing and never left. Over the past several years, I've represented brands like Canva, YouTube, Marvel, and Teen Vogue at national activations, and led a team of 32 ambassadors across 115+ events as Graduate Ambassador and Event Director.</p>
+        <p>That experience taught me how brands build real trust and connection with the people who show up for them. I'm especially drawn to beauty, fashion, and experiential marketing, and I'm always looking for the next event, brand, or community worth building.</p>
+        <div class="tag-row">
+          <span class="tag-pill">Event Production</span>
+          <span class="tag-pill">Experiential Marketing</span>
+          <span class="tag-pill">Brand Strategy</span>
+          <span class="tag-pill">Community Building</span>
+          <span class="tag-pill">Public Relations</span>
+          <span class="tag-pill">Content Creation</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><b>100+</b><span>Brands Repped</span></div>
+          <div class="stat"><b>115+</b><span>Events Directed</span></div>
+          <div class="stat"><b>32</b><span>Ambassadors Led</span></div>
+          <div class="stat"><b>8</b><span>Years Experience</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">the receipts</div>
+        <h2>a peek at the <span class="script">portfolio</span></h2>
+        <p>A selection of brand activations, event production, and leadership work.</p>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <div class="p-card reveal">
+          <div class="p-thumb"><img src="images/vidcon.jpg" alt="Alexis Silva at VidCon"></div>
+          <div class="p-body">
+            <span class="p-tag">Brand Ambassador</span>
+            <h3>National Brand Activations</h3>
+            <p>Repped brands like Canva, YouTube, Marvel, and Teen Vogue at national activations from Coachella to Comic-Con and VidCon, reaching over 5,000 people across 100+ brand placements.</p>
+          </div>
+        </div>
+
+        <div class="p-card reveal">
+          <div class="p-thumb"><img src="images/teen-vogue.png" alt="Alexis Silva at Teen Vogue Summit"></div>
+          <div class="p-body">
+            <span class="p-tag">Brand Ambassador</span>
+            <h3>Teen Vogue Summit</h3>
+            <p>Returned for five consecutive years as a trusted brand representative at Teen Vogue Summit, working the beauty and lifestyle activation floor and engaging attendees through interactive brand experiences.</p>
+          </div>
+        </div>
+
+        <div class="p-card reveal">
+          <div class="p-thumb"><img src="images/grad-event-director.jpg" alt="Alexis Silva at UC Riverside commencement" style="object-position:center 40%;"></div>
+          <div class="p-body">
+            <span class="p-tag">Event Production</span>
+            <h3>Graduate Ambassador, Event Director</h3>
+            <p>Recruited, trained, and led 32 student ambassadors through 115 events and 937 logged hours in a single year at UC Riverside's Anderson School of Management. Drove outreach initiatives generating 227 enrollment inquiries, demonstrating measurable program impact to the AGSM board.</p>
+          </div>
+        </div>
+
+        <div class="p-card reveal">
+          <div class="p-thumb"><video src="videos/grad-school-day.mp4" poster="images/grad-school-day-poster.png" controls playsinline></video></div>
+          <div class="p-body">
+            <span class="p-tag">Event Production</span>
+            <h3>Bring a Friend to Grad School Day</h3>
+            <p>A preview of a full run of show I built, produced, and directed from the ground up. After running and refining it multiple times, the event grew into a fully incorporated, quarterly program, with the school increasing its budget to support it as a flagship admissions event.</p>
+          </div>
+        </div>
+
+        <div class="p-card reveal">
+          <div class="p-thumb"><img src="images/paramount-case-comp.jpg" alt="Alexis Silva's team at the UCLA Anderson case competition"></div>
+          <div class="p-body">
+            <span class="p-tag">Strategy</span>
+            <h3>Paramount Case Competition, Semi-Finalist</h3>
+            <p>Advanced to semi-finals in the Media &amp; Entertainment Case Competition at UCLA Anderson as part of UC Riverside's first competing cohort, developing and presenting a live marketing strategy directly to Paramount executives.</p>
+          </div>
+        </div>
+
+        <div class="p-card reveal">
+          <div class="p-thumb" style="background:#1B1F3B;"><img src="images/creatives-in-business.png" alt="Creatives in Business magazine cover" style="object-fit:contain;"></div>
+          <div class="p-body">
+            <span class="p-tag">Leadership</span>
+            <h3>Creatives in Business, Founder &amp; President</h3>
+            <p>Founded Creatives in Business from scratch and grew it from 3 to 45 members, building a full elected board across five committees: Finance, Operations, Marketing, Industry Relations, and Programming. Planned and executed 20+ events, including speaker panels, networking mixers, and professional development workshops connecting students to industry professionals.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO SAMPLES -->
+  <section class="videos" id="videos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">see it in action</div>
+        <h2>video <span class="script">samples</span></h2>
+        <p>A few pieces of short-form content, made for social.</p>
+      </div>
+      <div class="phone-grid">
+
+        <div class="phone-item reveal">
+          <div class="phone-mock">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <video src="videos/personal-content.mp4" poster="images/personal-content-poster.png" controls playsinline></video>
+            </div>
+            <div class="phone-btn btn-power"></div>
+            <div class="phone-btn btn-vol1"></div>
+            <div class="phone-btn btn-vol2"></div>
+          </div>
+          <p class="phone-caption"><b>Beauty &amp; Lifestyle Content</b>Self-shot and self-edited short-form content, including PR unboxings and everyday style, built for my own platform.</p>
+          <span class="phone-kpi">12%+ Engagement Rate</span>
+        </div>
+
+        <div class="phone-item reveal">
+          <div class="phone-mock">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <video src="videos/ucr-content.mp4" poster="images/ucr-content-poster.png" controls playsinline></video>
+            </div>
+            <div class="phone-btn btn-power"></div>
+            <div class="phone-btn btn-vol1"></div>
+            <div class="phone-btn btn-vol2"></div>
+          </div>
+          <p class="phone-caption"><b>Grad School Recruitment Content</b>Self-produced short-form video for UCR's Anderson School of Management, sharing an honest, relatable take on the grad school experience to support admissions outreach.</p>
+          <span class="phone-kpi">2.2K Views</span>
+        </div>
+
+        <div class="phone-item reveal">
+          <div class="phone-mock">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <video src="videos/creatives-promo.mp4" poster="images/creatives-promo-poster.png" controls playsinline></video>
+            </div>
+            <div class="phone-btn btn-power"></div>
+            <div class="phone-btn btn-vol1"></div>
+            <div class="phone-btn btn-vol2"></div>
+          </div>
+          <p class="phone-caption"><b>Creatives in Business Promo</b>A playful, self-produced teaser built to drive engagement and boost attendance for a Creatives in Business event.</p>
+          <span class="phone-kpi">85% Increase in Event Profit</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap reveal">
+      <div class="eyebrow">let's work together</div>
+      <h2>got a brand that needs a <span class="script">moment</span>?</h2>
+      <p>Reach out and let's talk about how I can help your team.</p>
+      <div class="contact-actions">
+        <a href="mailto:alexisilva1124@gmail.com" class="btn btn-primary">Email Me</a>
+        <a href="https://www.linkedin.com/in/alexisilvaa/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        <a href="resume.pdf" target="_blank" class="btn btn-ghost">Resume</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="script">Alexis Silva</span> · © 2026
+  </div>
+</footer>
+
+<script>
+  // mobile menu
+  const burger = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('menuOverlay');
+  function closeMenu(){
+    mobileMenu.classList.remove('open');
+    overlay.classList.remove('open');
+  }
+  burger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    overlay.classList.toggle('open');
+  });
+  overlay.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
