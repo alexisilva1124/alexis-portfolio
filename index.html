@@ -396,12 +396,20 @@
   .phone-mock{
     position:relative;
     width:min(220px, 60vw);
-    aspect-ratio:9/18.5;
+    flex-shrink:0;
+  }
+  .phone-mock::before{
+    content:"";
+    display:block;
+    padding-top:205.56%;
+  }
+  .phone-frame{
+    position:absolute;
+    inset:0;
     background:var(--ink);
     border-radius:34px;
     padding:12px;
     box-shadow:var(--shadow);
-    flex-shrink:0;
   }
   .phone-notch{
     position:absolute;
@@ -701,7 +709,7 @@
       <div class="phone-grid">
 
         <div class="phone-item reveal">
-          <div class="phone-mock">
+          <div class="phone-mock"><div class="phone-frame">
             <div class="phone-notch"></div>
             <div class="phone-screen">
               <video src="videos/personal-content.mp4" poster="images/personal-content-poster.png" controls playsinline></video>
@@ -709,13 +717,13 @@
             <div class="phone-btn btn-power"></div>
             <div class="phone-btn btn-vol1"></div>
             <div class="phone-btn btn-vol2"></div>
-          </div>
+          </div></div>
           <p class="phone-caption"><b>Beauty &amp; Lifestyle Content</b>Self-shot and self-edited short-form content, including PR unboxings and everyday style, built for my own platform.</p>
           <span class="phone-kpi">12%+ Engagement Rate</span>
         </div>
 
         <div class="phone-item reveal">
-          <div class="phone-mock">
+          <div class="phone-mock"><div class="phone-frame">
             <div class="phone-notch"></div>
             <div class="phone-screen">
               <video src="videos/ucr-content.mp4" poster="images/ucr-content-poster.png" controls playsinline></video>
@@ -723,13 +731,13 @@
             <div class="phone-btn btn-power"></div>
             <div class="phone-btn btn-vol1"></div>
             <div class="phone-btn btn-vol2"></div>
-          </div>
+          </div></div>
           <p class="phone-caption"><b>Grad School Recruitment Content</b>Self-produced short-form video for UCR's Anderson School of Management, sharing an honest, relatable take on the grad school experience to support admissions outreach.</p>
           <span class="phone-kpi">2.2K Views</span>
         </div>
 
         <div class="phone-item reveal">
-          <div class="phone-mock">
+          <div class="phone-mock"><div class="phone-frame">
             <div class="phone-notch"></div>
             <div class="phone-screen">
               <video src="videos/creatives-promo.mp4" poster="images/creatives-promo-poster.png" controls playsinline></video>
@@ -737,7 +745,7 @@
             <div class="phone-btn btn-power"></div>
             <div class="phone-btn btn-vol1"></div>
             <div class="phone-btn btn-vol2"></div>
-          </div>
+          </div></div>
           <p class="phone-caption"><b>Creatives in Business Promo</b>A playful, self-produced teaser built to drive engagement and boost attendance for a Creatives in Business event.</p>
           <span class="phone-kpi">85% Increase in Event Profit</span>
         </div>
