@@ -395,13 +395,13 @@
   }
   .phone-mock{
     position:relative;
-    width:100%;
-    max-width:220px;
+    width:min(220px, 60vw);
     aspect-ratio:9/18.5;
     background:var(--ink);
     border-radius:34px;
     padding:12px;
     box-shadow:var(--shadow);
+    flex-shrink:0;
   }
   .phone-notch{
     position:absolute;
